@@ -1,3 +1,4 @@
+'use strict';
 const btnE1 = document.getElementById("btn")
 const birthdayE1 = document.getElementById("birthday")
 const resultE1 = document.getElementById('result')
@@ -7,8 +8,8 @@ function calculateAge() {
     if (birthdayValue === "") {
         alert("Please Enter Your birthday")
     } else {
-        const age = getAge(birthdayValue)
-        resultE1.innerText = `Your Age is ${age} years Old ${age > 1 ? "years" : "year"} old`
+        const yourAge = getAge(birthdayValue);
+        resultE1.innerText = `Your age is ${yourAge} ${yourAge > 1 ? 'years' : 'year'}`
     }
 }
 function getAge(birthdayValue) {
@@ -19,5 +20,6 @@ function getAge(birthdayValue) {
     if (month < 0 || currentDate.getDate() < birthDate.getDate()) {
         age--
     }
+    return age
 }
 btnE1.addEventListener("click", calculateAge)
